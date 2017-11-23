@@ -11,7 +11,7 @@ window.onload = function () {
         let key = sessionStorage.key(i);
         let value = sessionStorage.getItem(key);
         $.ajax({
-            url: "http://api.ksgin.online/Ticket/QueryTicket/" + value,
+            url: "http://47.93.98.212/Ticket/QueryTicket/" + value,
             type: "GET",
             contentType: "application/json; charset=utf-8",
             xhrFields: {withCredentials: true},

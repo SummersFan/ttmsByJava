@@ -23,9 +23,9 @@
 
 
 function LoginAPI() {
-    return "http://api.ksgin.online/User/Login";
+    return "http://47.93.98.212/User/Login";
 }
 
 function QueryUserByAccountAPI(account) {
-    return "http://api.ksgin.online/User/QueryUserByAccount/"+account;
+    return "http://47.93.98.212/User/QueryUserByAccount/"+account;
 }

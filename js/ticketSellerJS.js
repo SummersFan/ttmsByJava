@@ -98,7 +98,7 @@ function upDateUser() {
     let level = $form.eq(6).val();
     let tel = $form.eq(8).val();
     $.ajax({
-        url: "http://api.ksgin.online/User/UpdateUserPassword",
+        url: "http://47.93.98.212/User/UpdateUserPassword",
         type: "PATCH",
         contentType: "application/json; charset=utf-8",
         xhrFields: {withCredentials: true},
@@ -118,7 +118,7 @@ function upDateUser() {
     });
 
     $.ajax({
-        url: "http://api.ksgin.online/User/UpdateUserLevel",
+        url: "http://47.93.98.212/User/UpdateUserLevel",
         type: "PATCH",
         contentType: "application/json; charset=utf-8",
         xhrFields: {withCredentials: true},
@@ -139,7 +139,7 @@ function upDateUser() {
     });
 
     $.ajax({
-        url: "http://api.ksgin.online/User/UpdateUserTel",
+        url: "http://47.93.98.212/User/UpdateUserTel",
         type: "PATCH",
         contentType: "application/json; charset=utf-8",
         xhrFields: {withCredentials: true},
@@ -327,7 +327,7 @@ function ProgrammeBody(i) {
         );
 
         $.ajax({
-            url: "http://api.ksgin.online/Good/SelectGood",
+            url: "http://47.93.98.212/Good/SelectGood",
             type: "PATCH",
             contentType: "application/json; charset=utf-8",
             xhrFields: {withCredentials: true},
@@ -371,7 +371,7 @@ function ProgrammeBody(i) {
 
 
         $.ajax({
-            url: "http://api.ksgin.online/Programme",
+            url: "http://47.93.98.212/Programme",
             type: "GET",
             contentType: "application/json; charset=utf-8",
             xhrFields: {withCredentials: true},
@@ -409,7 +409,7 @@ function updateProgramme() {
     }
 
     $.ajax({
-        url: "http://api.ksgin.online/Good/SelectGood",
+        url: "http://47.93.98.212/Good/SelectGood",
         type: "PATCH",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
@@ -420,7 +420,7 @@ function updateProgramme() {
 
             for (let i = 0; i < res.data.length; i++) {
                 $.ajax({
-                    url: "http://api.ksgin.online/Programme/QueryProgrammeById/" + res.data[i].programmeId,
+                    url: "http://47.93.98.212/Programme/QueryProgrammeById/" + res.data[i].programmeId,
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
                     xhrFields: {withCredentials: true},
@@ -468,10 +468,10 @@ function updateProgramme() {
             for (let i = 0; i < res.data.length; i++) {
                 $.ajax({
                     type: "GET",
-                    url: " http://api.ksgin.online/Programme/SelectPlayBill/" + res.data[i].programmeId,
+                    url: " http://47.93.98.212/Programme/SelectPlayBill/" + res.data[i].programmeId,
                     xhrFields: {withCredentials: true},
                     success: function (rests) {
-                        let $src = "http://pic.ksgin.online/" + rests.data;
+                        let $src = "http://47.93.98.212:18001/" + rests.data;
 
 
                         movie.eq(i).find("img").attr("src", $src);
@@ -491,7 +491,7 @@ function updateProgramme() {
 
                     let $id = $(this).parent().children().eq(1).text();
                     $.ajax({
-                        url: "http://api.ksgin.online/Good/QueryGood/" + $id,
+                        url: "http://47.93.98.212/Good/QueryGood/" + $id,
                         type: "GET",
                         contentType: "application/json; charset=utf-8",
                         xhrFields: {withCredentials: true},
@@ -530,7 +530,7 @@ function queryGoodBySelect() {
     }
 
     $.ajax({
-        url: "http://api.ksgin.online/Good/SelectGood",
+        url: "http://47.93.98.212/Good/SelectGood",
         type: "PATCH",
         contentType: "application/json; charset=utf-8",
         xhrFields: {withCredentials: true},
@@ -544,7 +544,7 @@ function queryGoodBySelect() {
 
             for (let i = 0; i < res.data.length; i++) {
                 $.ajax({
-                    url: "http://api.ksgin.online/Programme/QueryProgrammeById/" + res.data[i].programmeId,
+                    url: "http://47.93.98.212/Programme/QueryProgrammeById/" + res.data[i].programmeId,
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
                     xhrFields: {withCredentials: true},
@@ -592,10 +592,10 @@ function queryGoodBySelect() {
             for (let i = 0; i < res.data.length; i++) {
                 $.ajax({
                     type: "GET",
-                    url: " http://api.ksgin.online/Programme/SelectPlayBill/" + res.data[i].programmeId,
+                    url: " http://47.93.98.212/Programme/SelectPlayBill/" + res.data[i].programmeId,
                     xhrFields: {withCredentials: true},
                     success: function (rests) {
-                        let $src = "http://pic.ksgin.online/" + rests.data;
+                        let $src = "http://47.93.98.212:18001/" + rests.data;
 
 
                         movie.eq(i).find("img").attr("src", $src);
@@ -615,7 +615,7 @@ function queryGoodBySelect() {
 
                     let $id = $(this).parent().children().eq(1).text();
                     $.ajax({
-                        url: "http://api.ksgin.online/Good/QueryGood/" + $id,
+                        url: "http://47.93.98.212/Good/QueryGood/" + $id,
                         type: "GET",
                         contentType: "application/json; charset=utf-8",
                         xhrFields: {withCredentials: true},
@@ -677,13 +677,13 @@ function ticketManager(res) {
 function addProgrammeTicket(res) {
 
     $.ajax({
-        url: "http://api.ksgin.online/Programme/SelectPlayBill/" + res.data.programmeId,
+        url: "http://47.93.98.212/Programme/SelectPlayBill/" + res.data.programmeId,
         type: "GET",
         xhrFields: {withCredentials: true},
         success: function (rest) {
 
 
-            let $src = "http://pic.ksgin.online/" + rest.data;
+            let $src = "http://47.93.98.212:18001/" + rest.data;
 
             $(".sellTicketLeft").append(
                 '<div class="programmeSell"><img/></div>'
@@ -694,7 +694,7 @@ function addProgrammeTicket(res) {
 
 
             $.ajax({
-                url: "http://api.ksgin.online/Programme/QueryProgrammeById/" + res.data.programmeId,
+                url: "http://47.93.98.212/Programme/QueryProgrammeById/" + res.data.programmeId,
                 type: "GET",
                 xhrFields: {withCredentials: true},
                 success: function (rest1) {
@@ -717,7 +717,7 @@ function addProgrammeTicket(res) {
 function updateSeat(resParent) {
     $(".SeatBody").children().remove();
     $.ajax({
-        url: "http://api.ksgin.online/Theater/QueryTheater/" + theaterId,
+        url: "http://47.93.98.212/Theater/QueryTheater/" + theaterId,
         type: "GET",
         xhrFields: {withCredentials: true},
         success: function (res) {
@@ -727,7 +727,7 @@ function updateSeat(resParent) {
             let goodId = resParent.data.goodId;
 
             $.ajax({
-                url: "http://api.ksgin.online/Ticket/SelectTicket/" + goodId,
+                url: "http://47.93.98.212/Ticket/SelectTicket/" + goodId,
                 type: "GET",
                 xhrFields: {withCredentials: true},
                 success: function (rest) {
@@ -849,7 +849,7 @@ function clickOfSeat() {
 //退票操作
 function ReturnedTicketBtn(id) {
     $.ajax({
-        url: "http://api.ksgin.online/Ticket/ReturnedTicket/" + id + "&" + userId,
+        url: "http://47.93.98.212/Ticket/ReturnedTicket/" + id + "&" + userId,
         type: "POST",
         contentType: "application/json; charset=utf-8",
         asnyc: false,
@@ -884,7 +884,7 @@ function submitOrderBtn() {
             sessionStorage.setItem("sellTicket"+id,id);
 
             $.ajax({
-                url: "http://api.ksgin.online/Ticket/SellTicket/" + id,
+                url: "http://47.93.98.212/Ticket/SellTicket/" + id,
                 type: "POST",
                 contentType: "application/json; charset=utf-8",
                 xhrFields: {withCredentials: true},
@@ -917,7 +917,7 @@ function payBtn() {
             console.log(id);
 
             $.ajax({
-                url: "http://api.ksgin.online/Ticket/PayTicket/" + id + "&" + userId,
+                url: "http://47.93.98.212/Ticket/PayTicket/" + id + "&" + userId,
                 type: "POST",
                 contentType: "application/json; charset=utf-8",
                 xhrFields: {withCredentials: true},
@@ -942,7 +942,7 @@ function show() {
     if (id != "") {
         console.log(id);
         $.ajax({
-            url: "http://api.ksgin.online/Good/QueryGood/" + id,
+            url: "http://47.93.98.212/Good/QueryGood/" + id,
             type: "GET",
             contentType: "application/json; charset=utf-8",
             xhrFields: {withCredentials: true},
@@ -978,7 +978,7 @@ function ticketSeller(i) {
 
 
         $.ajax({
-            url: "http://api.ksgin.online/Order/SelectOrder",
+            url: "http://47.93.98.212/Order/SelectOrder",
             type: "PATCH",
             contentType: "application/json; charset=utf-8",
             xhrFields: {withCredentials: true},
@@ -1011,7 +1011,7 @@ function ticketSeller(i) {
 function updateTicket() {
     $("#OrderTable").remove();
     $.ajax({
-        url: "http://api.ksgin.online/Order/SelectOrder",
+        url: "http://47.93.98.212/Order/SelectOrder",
         type: "PATCH",
         data: JSON.stringify({
             "theaterId": theaterId,
@@ -1041,7 +1041,7 @@ function updateTicket() {
             for (let i = 0; i < $data.length; i++) {
 
                 $.ajax({
-                    url: "http://api.ksgin.online/Ticket/QueryTicket/" + $data[i].ticketId, //获得电影名
+                    url: "http://47.93.98.212/Ticket/QueryTicket/" + $data[i].ticketId, //获得电影名
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
                     xhrFields: {withCredentials: true},
@@ -1088,7 +1088,7 @@ function queryByCondition() {
     $("#OrderTable").remove();
 
     $.ajax({
-        url: "http://api.ksgin.online/Order/SelectOrder",
+        url: "http://47.93.98.212/Order/SelectOrder",
         type: "PATCH",
         data: JSON.stringify({
             "theaterId": theaterId,
@@ -1122,7 +1122,7 @@ function queryByCondition() {
 
             for (let i = 0; i < $data.length; i++) {
                 $.ajax({
-                    url: "http://api.ksgin.online/Ticket/QueryTicket/" + $data[i].ticketId, //获得电影名
+                    url: "http://47.93.98.212/Ticket/QueryTicket/" + $data[i].ticketId, //获得电影名
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
                     xhrFields: {withCredentials: true},
